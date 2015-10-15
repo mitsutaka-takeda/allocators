@@ -20,8 +20,11 @@ namespace allocator {
         
         allocator::block 
         allocateAll(){
-            Primary::allocateAll();
-            Fallback::allocateAll();
+            auto ret = Primary::allocateAll();
+            if(ret.ptr == nullptr) {
+                ret = Fallback::allocateAll();
+            }
+            return ret;
         }
         
         void
