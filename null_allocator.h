@@ -21,7 +21,7 @@ namespace allocator {
         }
         
         void
-        deallocate(block b){
+        deallocate(allocator::block b){
             Expects(b.ptr == nullptr);
         }
 
@@ -31,7 +31,7 @@ namespace allocator {
         }
 
         // null_allocator owns nothing.
-        bool owns(block){
+        bool owns(allocator::block){
             const auto ret = false;
             Ensures(!ret);
             return ret;
