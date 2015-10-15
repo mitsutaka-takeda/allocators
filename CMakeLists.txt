@@ -11,6 +11,8 @@ add_library(allocators
   null_allocator.cpp
   fallback_allocator.h
   fallback_allocator.cpp
+  stack_allocator.h
+  stack_allocator.cpp
   )
 
 target_include_directories(
