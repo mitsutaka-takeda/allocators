@@ -18,7 +18,7 @@ namespace allocator {
                 return {nullptr, 0};
             }
 
-            block b{p_, n};
+            allocator::block b{p_, n};
             p_ += rounded;
             Ensures(std::cbegin(d_) <= p_ && p_ <= std::cend(d_));
             return b;
@@ -51,6 +51,8 @@ namespace allocator {
 
         bool
         owns(allocator::block b){
+            // todo : Need to think about meaning of owns.
+            // Should owns(b) be true even if b has not been allocated yet?
             return (std::cbegin(d_) <= b.ptr) && (b.ptr < p_);
         }
 
