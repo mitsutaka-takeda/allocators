@@ -13,6 +13,8 @@ add_library(allocators
   fallback_allocator.cpp
   stack_allocator.h
   stack_allocator.cpp
+  free_list_allocator.h
+  free_list_allocator.cpp
   )
 
 target_include_directories(
